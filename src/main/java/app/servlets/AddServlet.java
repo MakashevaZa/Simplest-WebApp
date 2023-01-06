@@ -1,5 +1,6 @@
 package app.servlets;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +11,10 @@ import java.io.PrintWriter;
 public class AddServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        PrintWriter wr = res.getWriter();
-        wr.println("Request for adding a user was received");
+     //   PrintWriter wr = res.getWriter();
+    //    wr.println("Request for adding a user was received");
+
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/add.jsp");
+        requestDispatcher.forward(req, res);
     }
 }

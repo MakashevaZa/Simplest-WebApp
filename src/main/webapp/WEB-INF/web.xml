@@ -1,22 +1,3 @@
 <web-app>
     <display-name>Zarina's Web Application</display-name>
-    <!-- Mapping of Add Servlet -->
-    <servlet>
-        <servlet-name>add</servlet-name>
-        <servlet-class>app.servlets.AddServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>add</servlet-name>
-        <url-pattern>/add</url-pattern>
-    </servlet-mapping>
-
-    <!-- Mapping of List Servlet -->
-    <servlet>
-        <servlet-name>list</servlet-name>
-        <servlet-class>app.servlets.ListServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>list</servlet-name>
-        <url-pattern>/list</url-pattern>
-    </servlet-mapping>
 </web-app>

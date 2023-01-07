@@ -1,5 +1,8 @@
 package app.servlets;
 
+import app.entities.User;
+import app.model.Model;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,5 +19,16 @@ public class AddServlet extends HttpServlet {
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/add.jsp");
         requestDispatcher.forward(req, res);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        String name = req.getParameter("name");
+        String pass = req.getParameter("pass");
+        User user = new User(name, pass);
+        Model.getInstance().add(user);
+
+        req.setAttribute("userName", name);
+        doGet(req, res);
     }
 }
